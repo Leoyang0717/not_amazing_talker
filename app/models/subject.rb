@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
 class Subject < ApplicationRecord
-  belongs_to :tutor
+  has_many :tutor_subjects
+  has_many :tutors, through: :tutor_subjects
 end
