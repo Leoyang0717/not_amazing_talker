@@ -1,0 +1,13 @@
+<p><%= notice %></p>
+<h1>Tutors</h1>
+
+<%= link_to '新增 Tutor', action: :new %>
+
+<% @tutors.each do |tutor| %>
+  <div>
+    <span>name: <%= link_to tutor.name, tutor_path(tutor.id) %></span>
+    <span>address: <%= tutor.address %></span>
+    <span>phone <%= tutor.phone %></span>
+    <span><%= link_to '修改', edit_tutor_path(tutor.id) %></span>
+  </div>
+<% end%>

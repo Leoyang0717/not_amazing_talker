@@ -1,0 +1,19 @@
+<h1>修改 Tutors</h1>
+
+<% if @tutor.errors.any? %>
+      <ul>
+      <% @tutor.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+<% end %>
+
+<%= form_for @tutor do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+  <%= f.label :phone %>
+  <%= f.text_field :phone %>
+  <%= f.submit "Update" %>
+<% end %>
